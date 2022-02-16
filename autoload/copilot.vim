@@ -228,7 +228,7 @@ endfunction
 
 function! s:SuggestionTextWithAdjustments() abort
   try
-    if mode() !~# '^[iR]' || pumvisible() || !s:dest || !exists('b:_copilot.suggestions')
+    if mode() !~# '^[iR]' || !s:dest || !exists('b:_copilot.suggestions')
       return ['', 0, 0, '']
     endif
     let choice = get(b:_copilot.suggestions, b:_copilot.choice, {})
